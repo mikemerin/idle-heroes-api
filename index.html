@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>NY Times Article Search</title>
+    <script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+  </head>
+  <body>
+
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">NY Times Article Searcher</a>
+      </div>
+    </nav>
+
+    <div class='container'>
+      <div class='row'>
+        <div class='col s4'>
+          <h1>Find an Article</h1>
+
+          <form id="article-search">
+          <h2><u>Required</u></h2>
+          <label>Search Term<br><input id='query' type='text' /> </label>
+          <h2><u><label>Optional</label></u></h2>
+            <label> Begin Date<br><input id = 'begin_date' type='date' /><br><br></label>
+            <label>End Date<br><input id = 'end_date' type='date' /><br><br>
+            <label>Sort By:<br><select name="sort" id='sort'><br><br></label>
+              <option value = "none"> None </option>
+              <option value = "newest"> Newest </option>
+              <option value = "oldest"> Oldest </option>
+            </select><br><br>
+            <input type='submit' />
+          </form>
+        </div>
+
+        <div class='col s8'>
+          
+          <ol id="articles">
+          </ol>
+
+          <!-- <table id="articles">
+            <tr>
+              <th>#</th>
+              <th>Title</th>
+              <th>Date</th>
+            </tr>
+          </table> -->
+        </div>
+      </div>
+    </div>
+
+      <script type="text/javascript" src='index.js'></script>
+  </body>
+</html>
