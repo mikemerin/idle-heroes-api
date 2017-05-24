@@ -31,6 +31,22 @@ class HeroesController < ApplicationController
     end
   end
 
+  def edit
+    @hero = Hero.find_by(id: params[:id])
+  end
+
+  def update
+    @hero = Hero.find_by(id: params[:id])
+    @stat = Stat.find_by(id: params[:id])
+    @hero.stat = @stat
+    if @hero.save && @stat.save
+      redirect_to hero_path(@hero)
+    else
+      render :edit
+    end
+
+  end
+
   private
 
   def hero_params

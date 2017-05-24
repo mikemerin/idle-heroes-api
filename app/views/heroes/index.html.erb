@@ -1,7 +1,7 @@
 <h1>All Heroes</h1>
 
 <% @heroes.each do |hero| %>
-  <h3><%= hero.name %></h3>
+  <h3><%= link_to "#{hero.name}", hero_path(hero) %></h3>
   Faction: <%= hero.faction %> <br>
   Role: <%= hero.role %>  <br>
   Skills: <%= hero.skills %> <br>

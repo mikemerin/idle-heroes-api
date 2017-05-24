@@ -9,3 +9,6 @@ Armor: <%= @hero.stat.armor %><br>
 Speed: <%= @hero.stat.speed %><br>
 
 Skills: <%= @hero.skills %> <br>
+<br>
+<%= link_to "Edit This Hero", edit_hero_path(@hero) %><br>
+<%= link_to "Return to All Heroes", heroes_path %>
