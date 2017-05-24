@@ -4967,3 +4967,80 @@ Processing by HeroesController#show as JSON
 [active_model_serializers]   [1m[35mStat Load (0.1ms)[0m  SELECT  "stats".* FROM "stats" WHERE "stats"."hero_id" = ? LIMIT 1  [["hero_id", 4]]
 [active_model_serializers] Rendered HeroSerializer with ActiveModelSerializers::Adapter::Attributes (2.75ms)
 Completed 200 OK in 6ms (Views: 3.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/heroes" for ::1 at 2017-05-24 17:17:15 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (2.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HeroesController#index as HTML
+  [1m[35mHero Load (2.1ms)[0m  SELECT "heroes".* FROM "heroes"
+  Rendered heroes/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 451ms (Views: 408.2ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/heroes/4" for ::1 at 2017-05-24 17:17:20 -0400
+Processing by HeroesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mHero Load (0.4ms)[0m  [1mSELECT  "heroes".* FROM "heroes" WHERE "heroes"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mStat Load (2.2ms)[0m  SELECT  "stats".* FROM "stats" WHERE "stats"."hero_id" = ? LIMIT 1  [["hero_id", 4]]
+  Rendered heroes/show.html.erb within layouts/application (43.3ms)
+Completed 200 OK in 140ms (Views: 102.2ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/heroes" for ::1 at 2017-05-24 17:17:23 -0400
+Processing by HeroesController#index as HTML
+  [1m[36mHero Load (0.3ms)[0m  [1mSELECT "heroes".* FROM "heroes"[0m
+  Rendered heroes/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 49ms (Views: 45.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/heroes/3" for ::1 at 2017-05-24 17:17:29 -0400
+Processing by HeroesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mHero Load (0.1ms)[0m  SELECT  "heroes".* FROM "heroes" WHERE "heroes"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mStat Load (0.1ms)[0m  [1mSELECT  "stats".* FROM "stats" WHERE "stats"."hero_id" = ? LIMIT 1[0m  [["hero_id", 3]]
+  Rendered heroes/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 44ms (Views: 42.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/heroes" for ::1 at 2017-05-24 17:17:31 -0400
+Processing by HeroesController#index as HTML
+  [1m[35mHero Load (0.2ms)[0m  SELECT "heroes".* FROM "heroes"
+  Rendered heroes/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 54ms (Views: 52.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/heroes/new" for ::1 at 2017-05-24 17:17:33 -0400
+Processing by HeroesController#new as HTML
+  Rendered heroes/_form.html.erb (792.2ms)
+  Rendered heroes/new.html.erb within layouts/application (806.8ms)
+Completed 200 OK in 844ms (Views: 841.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/heroes" for ::1 at 2017-05-24 17:21:54 -0400
+Processing by HeroesController#index as HTML
+  [1m[36mHero Load (0.5ms)[0m  [1mSELECT "heroes".* FROM "heroes"[0m
+  Rendered heroes/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 77ms (Views: 74.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/heroes" for ::1 at 2017-05-24 17:22:07 -0400
+Processing by HeroesController#index as HTML
+  [1m[35mHero Load (0.2ms)[0m  SELECT "heroes".* FROM "heroes"
+  Rendered heroes/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 27ms (Views: 25.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/heroes/3.json" for ::1 at 2017-05-24 17:24:13 -0400
+Processing by HeroesController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mHero Load (0.2ms)[0m  [1mSELECT  "heroes".* FROM "heroes" WHERE "heroes"."id" = ? LIMIT 1[0m  [["id", 3]]
+[active_model_serializers]   [1m[35mStat Load (0.1ms)[0m  SELECT  "stats".* FROM "stats" WHERE "stats"."hero_id" = ? LIMIT 1  [["hero_id", 3]]
+[active_model_serializers] Rendered HeroSerializer with ActiveModelSerializers::Adapter::Attributes (6.2ms)
+Completed 200 OK in 96ms (Views: 94.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/heroes.json" for ::1 at 2017-05-24 17:25:50 -0400
+Processing by HeroesController#index as JSON
+  [1m[36mHero Load (0.6ms)[0m  [1mSELECT "heroes".* FROM "heroes"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.76ms)
+Completed 200 OK in 15ms (Views: 3.3ms | ActiveRecord: 0.6ms)
