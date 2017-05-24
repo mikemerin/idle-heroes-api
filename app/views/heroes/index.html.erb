@@ -2,6 +2,27 @@
 
 <% @heroes.each do |hero| %>
   <h3><%= hero.name %></h3>
-  <%= hero.stats %>
-
+  Faction: <%= hero.faction %> <br>
+  Role: <%= hero.role %>  <br>
+  Skills: <%= hero.skills %> <br>
+  <button class="js-more" data-id="<%= hero.id %>">More Info</button>
+  <ul id="heroes-<%= hero.id %>-stats">
+  </ul>
 <% end %>
+
+
+<script type="text/javascript" charset="utf-8">
+$(function() {
+  $(".js-more").on("click", function() {
+    var id = $(this).data("id");
+    $.get("/heroes/" + id + ".json", function(data) {
+      var stats = data.stat
+      var statsList = ""
+      for (var i in stats){
+        statsList += '<li class="js-stat" data-id="' + data.id + '">' + i + ': ' + stats[i] + '</li>';
+      }
+      $("#heroes-" + id + "-stats").html(statsList);
+    });
+  });
+});
+</script>

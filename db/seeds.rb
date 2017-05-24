@@ -5,43 +5,46 @@ groo = Hero.create({
   name: "Groo",
   faction: "forest",
   role: "warrior",
-  stats_id: 1,
   skills: 4
 })
 
-Stat.create({
+stat1 = Stat.create({
   attack: 2517,
   health: 29832,
   armor: 876,
-  speed: 609
+  speed: 609,
 })
+
+groo.stat = stat1
 
 iceblink = Hero.create({
   name: "Iceblink",
   faction: "justice",
   role: "ranger",
-  stats_id: 2,
   skills: 4
 })
 
-Stat.create({
+stat2 = Stat.create({
   attack: 3234,
   health: 35073,
   armor: 697,
-  speed: 594
+  speed: 594,
 })
+
+iceblink.stat = stat2
 
 karim = Hero.create({
   name: "Karim",
   faction: "abyss",
   role: "assassin",
-  stats_id: 3,
   skills: 3
 })
 
-Stat.create({
+stat3 = Stat.create({
   attack: 4656,
   health: 16593,
   armor: 610,
-  speed: 621
+  speed: 621,
 })
+
+karim.stat = stat3
