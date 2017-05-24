@@ -1,0 +1,7 @@
+<h1>All Heroes</h1>
+
+<% @heroes.each do |hero| %>
+  <h3><%= hero.name %></h3>
+  <%= hero.stats %>
+
+<% end %>
