@@ -1,0 +1,42 @@
+<h1>Create a New Hero</h1>
+
+<% if @hero.errors.any? %>
+  <ul>
+    <% @hero.errors.full_messages.each do |message| %>
+      <li><%= message %></li><br>
+    <% end %>
+  </ul>
+<% end %>
+
+
+<%= form_for @hero do |f| %>
+
+  <h3>Hero Info</h3>
+
+  <p><%= f.label :name %></p>
+  <p><%= f.text_field :name %><p>
+  <p><%= f.label :faction %></p>
+  <p><%= f.text_field :faction %></p>
+  <p><%= f.label :role %></p>
+  <p><%= f.text_field :role %></p>
+  <p><%= f.label :skills %></p>
+  <p><%= f.number_field :skills %></p>
+
+  <h3>Stats</h3>
+
+  <%= f.fields_for :stats do |info| %>
+
+    <p><%= info.label :health %></p>
+    <p><%= info.number_field :health %></p>
+    <p><%= info.label :attack %></p>
+    <p><%= info.number_field :attack %></p>
+    <p><%= info.label :armor %></p>
+    <p><%= info.number_field :armor %></p>
+    <p><%= info.label :speed %></p>
+    <p><%= info.number_field :speed %></p>
+
+  <% end %>
+
+  <p><%= f.submit %></p>
+
+<% end %>
